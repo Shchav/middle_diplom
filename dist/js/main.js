@@ -16,7 +16,17 @@
   \*********************/
 (__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
-eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_requestCallModal_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/requestCallModal.js */ \"./js/modules/requestCallModal.js\");\n/* harmony import */ var _modules_timer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/timer.js */ \"./js/modules/timer.js\");\n\r\n\r\n\r\n(0,_modules_requestCallModal_js__WEBPACK_IMPORTED_MODULE_0__.requestCallModal)()\r\n;(0,_modules_timer_js__WEBPACK_IMPORTED_MODULE_1__.timer)('8 march 2026 12:40:00')\r\n\r\n\n\n//# sourceURL=webpack://middle_diplom/./js/index.js?\n}");
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_entryPoint_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/entryPoint.js */ \"./js/modules/entryPoint.js\");\n/* harmony import */ var _modules_requestCallModal_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/requestCallModal.js */ \"./js/modules/requestCallModal.js\");\n/* harmony import */ var _modules_timer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/timer.js */ \"./js/modules/timer.js\");\n\r\n\r\n\r\n\r\n\r\n(0,_modules_requestCallModal_js__WEBPACK_IMPORTED_MODULE_1__.requestCallModal)()\r\n;(0,_modules_timer_js__WEBPACK_IMPORTED_MODULE_2__.timer)('8 march 2026 12:40:00')\r\n\r\n\r\n\n\n//# sourceURL=webpack://middle_diplom/./js/index.js?\n}");
+
+/***/ },
+
+/***/ "./js/modules/entryPoint.js"
+/*!**********************************!*\
+  !*** ./js/modules/entryPoint.js ***!
+  \**********************************/
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst entryPoint = () => {\r\n    console.log('dddd');\r\n\r\n}\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (entryPoint);\n\n//# sourceURL=webpack://middle_diplom/./js/modules/entryPoint.js?\n}");
 
 /***/ },
 
@@ -26,7 +36,7 @@ eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mo
   \****************************************/
 (__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
-eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   requestCallModal: () => (/* binding */ requestCallModal)\n/* harmony export */ });\nconst requestCallModal = () => {\r\n    // Кнопка \"Заказать звонок\"\r\n    const requestCallBtn = document.querySelector('#request-call-btn')\r\n    // Модальное окно \"Заказ звонка\"\r\n    const modal = document.querySelector('.header-modal')\r\n    // и его подложка\r\n    const modalOverlay = document.querySelector('.overlay')\r\n\r\n    console.log(requestCallBtn);\r\n\r\n\r\n    // Слушатель нажатия на кнопку \"Заказать звонок\"\r\n    requestCallBtn.addEventListener('click', (e) => {\r\n        // Отображение диалогового окна \"Заказ звонка\"\r\n        modalOverlay.style.display = 'block'\r\n        // и его подложки\r\n        modal.style.display = 'block'\r\n    })\r\n\r\n    // Слушатель событий модального окна \"Заказ звонка\"\r\n    modal.addEventListener('click', (e) => {\r\n        console.log('333');\r\n\r\n        if (e.target.classList.contains('header-modal__close')) {\r\n            // Закрытие диалогового окна \"Заказ звонка\"\r\n            modalOverlay.style.display = 'none'\r\n            // и его подложки\r\n            modal.style.display = 'none'\r\n        }\r\n    })\r\n}\n\n//# sourceURL=webpack://middle_diplom/./js/modules/requestCallModal.js?\n}");
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   requestCallModal: () => (/* binding */ requestCallModal)\n/* harmony export */ });\nconst requestCallModal = () => {\r\n    // Кнопка \"Заказать звонок\"\r\n    const requestCallBtn = document.getElementById('request-call-btn')\r\n    // Модальное окно \"Заказ звонка\"\r\n    const modal = document.querySelector('.header-modal')\r\n    // и его подложка\r\n    const modalOverlay = document.querySelector('.overlay')\r\n\r\n    // Слушатель нажатия на кнопку \"Заказать звонок\"\r\n    requestCallBtn.addEventListener('click', (e) => {\r\n        // Отображение диалогового окна \"Заказ звонка\"\r\n        modalOverlay.style.display = 'block'\r\n        // и его подложки\r\n        modal.style.display = 'block'\r\n    })\r\n\r\n    // Слушатель событий модального окна \"Заказ звонка\"\r\n    modal.addEventListener('click', (e) => {\r\n        console.log('fffffffffffffff');\r\n\r\n        if (e.target.classList.contains('header-modal__close')) {\r\n            // Закрытие диалогового окна \"Заказ звонка\"\r\n            modalOverlay.style.display = 'none'\r\n            // и его подложки\r\n            modal.style.display = 'none'\r\n        }\r\n    })\r\n}\n\n//# sourceURL=webpack://middle_diplom/./js/modules/requestCallModal.js?\n}");
 
 /***/ },
 
