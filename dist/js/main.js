@@ -16,7 +16,7 @@
   \*********************/
 (__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
-eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_requestCallModal_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/requestCallModal.js */ \"./js/modules/requestCallModal.js\");\n\r\n\r\n(0,_modules_requestCallModal_js__WEBPACK_IMPORTED_MODULE_0__.requestCallModal)()\r\n\r\n\n\n//# sourceURL=webpack://middle_diplom/./js/index.js?\n}");
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_requestCallModal_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/requestCallModal.js */ \"./js/modules/requestCallModal.js\");\n/* harmony import */ var _modules_timer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/timer.js */ \"./js/modules/timer.js\");\n\r\n\r\n\r\n(0,_modules_requestCallModal_js__WEBPACK_IMPORTED_MODULE_0__.requestCallModal)()\r\n;(0,_modules_timer_js__WEBPACK_IMPORTED_MODULE_1__.timer)('8 march 2026 12:40:00')\r\n\r\n\n\n//# sourceURL=webpack://middle_diplom/./js/index.js?\n}");
 
 /***/ },
 
@@ -27,6 +27,16 @@ eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mo
 (__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
 eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   requestCallModal: () => (/* binding */ requestCallModal)\n/* harmony export */ });\nconst requestCallModal = () => {\r\n    // Кнопка \"Заказать звонок\"\r\n    const requestCallBtn = document.querySelector('#request-call-btn')\r\n    // Модальное окно \"Заказ звонка\"\r\n    const modal = document.querySelector('.header-modal')\r\n    // и его подложка\r\n    const modalOverlay = document.querySelector('.overlay')\r\n\r\n    console.log(requestCallBtn);\r\n\r\n\r\n    // Слушатель нажатия на кнопку \"Заказать звонок\"\r\n    requestCallBtn.addEventListener('click', (e) => {\r\n        // Отображение диалогового окна \"Заказ звонка\"\r\n        modalOverlay.style.display = 'block'\r\n        // и его подложки\r\n        modal.style.display = 'block'\r\n    })\r\n\r\n    // Слушатель событий модального окна \"Заказ звонка\"\r\n    modal.addEventListener('click', (e) => {\r\n        console.log('333');\r\n\r\n        if (e.target.classList.contains('header-modal__close')) {\r\n            // Закрытие диалогового окна \"Заказ звонка\"\r\n            modalOverlay.style.display = 'none'\r\n            // и его подложки\r\n            modal.style.display = 'none'\r\n        }\r\n    })\r\n}\n\n//# sourceURL=webpack://middle_diplom/./js/modules/requestCallModal.js?\n}");
+
+/***/ },
+
+/***/ "./js/modules/timer.js"
+/*!*****************************!*\
+  !*** ./js/modules/timer.js ***!
+  \*****************************/
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   timer: () => (/* binding */ timer)\n/* harmony export */ });\nconst timer = (deadline) => {\r\n    const timerDays = document.querySelector('div.count_1>span');\r\n    const timerHours = document.querySelector('div.count_2>span');\r\n    const timerMinutes = document.querySelector('div.count_3>span');\r\n    const timerSeconds = document.querySelector('div.count_4>span');\r\n\r\n    let idInterval;\r\n\r\n    const getTimeRemaining = () => {\r\n        let dateStop = new Date(deadline).getTime();\r\n        let dateNow = new Date().getTime();\r\n        let timeRemaining = (dateStop - dateNow) / 1000;\r\n\r\n        let days = Math.floor((timeRemaining / 60 / 60 / 24));\r\n        let hours = Math.floor((timeRemaining / 60 / 60) % 24);\r\n        let minutes = Math.floor((timeRemaining / 60) % 60);\r\n        let seconds = Math.floor(timeRemaining % 60);\r\n\r\n        if (timeRemaining <= 1) {\r\n            clearInterval(idInterval);\r\n            return { timeRemaining: 0, days: 0, hours: 0, minutes: 0, seconds: 0 }\r\n        }\r\n        return { timeRemaining, days, hours, minutes, seconds }\r\n    }\r\n\r\n    const addZero = (num) => {\r\n        let strNum = String(num);\r\n        if (strNum.length < 2) {\r\n            strNum = `0${strNum}`;\r\n        }\r\n        return strNum;\r\n    }\r\n\r\n    const updateClock = () => {\r\n        let getTime = getTimeRemaining();\r\n\r\n        timerDays.textContent = addZero(getTime.days);\r\n        timerHours.textContent = addZero(getTime.hours);\r\n        timerMinutes.textContent = addZero(getTime.minutes);\r\n        timerSeconds.textContent = addZero(getTime.seconds);\r\n    }\r\n\r\n    idInterval = setInterval(updateClock, 1000);\r\n}\r\n\n\n//# sourceURL=webpack://middle_diplom/./js/modules/timer.js?\n}");
 
 /***/ }
 
