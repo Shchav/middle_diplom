@@ -1,8 +1,10 @@
 export const timer = (deadline) => {
-    const timerDays = document.querySelector('div.count_1>span');
-    const timerHours = document.querySelector('div.count_2>span');
-    const timerMinutes = document.querySelector('div.count_3>span');
-    const timerSeconds = document.querySelector('div.count_4>span');
+
+    // На странице несколько таймеров, как минимум 2
+    const timerDays = document.querySelectorAll('div.count_1>span');
+    const timerHours = document.querySelectorAll('div.count_2>span');
+    const timerMinutes = document.querySelectorAll('div.count_3>span');
+    const timerSeconds = document.querySelectorAll('div.count_4>span');
 
     let idInterval;
 
@@ -31,13 +33,19 @@ export const timer = (deadline) => {
         return strNum;
     }
 
+    const updateTimer = (arr, value) => {
+        arr.forEach(elem => {
+            elem.textContent = value;
+        })
+    }
+
     const updateClock = () => {
         let getTime = getTimeRemaining();
 
-        timerDays.textContent = addZero(getTime.days);
-        timerHours.textContent = addZero(getTime.hours);
-        timerMinutes.textContent = addZero(getTime.minutes);
-        timerSeconds.textContent = addZero(getTime.seconds);
+        updateTimer(timerDays, addZero(getTime.days))
+        updateTimer(timerHours, addZero(getTime.hours))
+        updateTimer(timerMinutes, addZero(getTime.minutes))
+        updateTimer(timerSeconds, addZero(getTime.seconds))
     }
 
     idInterval = setInterval(updateClock, 1000);
