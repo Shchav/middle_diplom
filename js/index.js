@@ -2,6 +2,7 @@ import { timer } from "./modules/timer.js";
 import modals from "./modules/modals.js";
 import leaveRequest from "./modules/leaveRequest.js";
 import { calc } from "./modules/calc.js";
+import { scrolling } from "./modules/scrolling.js";
 
 // Задача 6.
 // Время, когда закончатся скидки
@@ -27,5 +28,10 @@ modals({
 leaveRequest('https://jsonplaceholder.typicode.com/posts')
 // Задача 10.
 calc()
-
+// Задача 9.
+// Плавная прокрутка страницы
+scrolling({
+    smoothScrollCls: '.smooth-scroll', // Кнопка прокрутки страницы на самый верх
+    timeScrol: 1000 // Время плавной прокрутки
+})
 
