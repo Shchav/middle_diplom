@@ -37,7 +37,7 @@ sliderCarousel({
 // Задача 4.
 // Слайдер-карусель "Наши услуги"
 sliderCarousel({
-    items: '.col-md-12',
+    items: '.col-md-12.col-lg-6',
     itemsWrap: '.service-block-wrap',
     arrowsWrap: '.services-arrows',
     arrowCls: '.services__arrow',
