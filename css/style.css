@@ -1904,7 +1904,8 @@ input.error {
 
 .benefits-wrap {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
+  justify-content: center;
   margin: 0 auto;
 }
 
@@ -1929,6 +1930,12 @@ input.error {
 
 .benefits__arrow>img {
   width: 100%;
+}
+
+.service-block-wrap {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
 }
 
 .services-arrows {
