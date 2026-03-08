@@ -65,7 +65,7 @@ modals({
 })
 // Задача 6.
 // Время, когда закончатся скидки
-timer('8 march 2026 12:40:00')
+timer('9 march 2026 12:40:00')
 // Задача 7.
 // Надо установить валидный url для отправки заявки
 leaveRequest('https://jsonplaceholder.typicode.com/posts')
@@ -83,7 +83,7 @@ scrolling({
 calc()
 // Дополнительное задание.
 try {
-    comments('comments.json')
+    comments('comments.json', 2000)
 } catch (error) {
 }
 
