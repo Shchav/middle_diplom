@@ -5,6 +5,7 @@ import { calc } from "./modules/calc.js";
 import { scrolling } from "./modules/scrolling.js";
 import { sertificates } from "./modules/sertificates.js";
 import { sliderCarousel } from "./modules/sliderCarousel.js";
+import { comments } from "./modules/comments.js";
 
 // Задача 2.
 // Работа с модальным окном "Заказать звонок"
@@ -80,6 +81,12 @@ scrolling({
 // Задача 10.
 // Калькулятор
 calc()
+// Дополнительное задание.
+try {
+    comments('comments.json')
+} catch (error) {
+}
+
 
 
 
